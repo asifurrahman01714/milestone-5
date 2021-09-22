@@ -8,12 +8,26 @@
 </head>
 <body>
     <h1>JSON - Javascript Object Notation</h1>
+    <h2>All person From Json</h2>
+    <h3 id="profileName"></h3>
     <script>
         const user = {id: 123, name: 'Asif Ur Rahman'}
         const userJson = JSON.stringify(user); // Converting object to json string
         console.log(userJson);
         const userFromJson = JSON.parse(userJson); // Converting json to object
         console.log(userFromJson);
+    </script>
+
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response =>response.json())
+        .then(data => console.log(data));
+
+        const profileName = document.getElementById('profileName');
+        for (let i = 0; i < data.length; i++) {
+            const element = data[i];
+            profileName.innerText =data[i];
+        }
     </script>
 </body>
 </html>

@@ -29,7 +29,14 @@
             console.log('users', users);
             const userContainer =document.getElementById('userContainer');
             const userNames = users.map((user) =>user.username);
-            console.log(userNames)
+            console.log(userNames);
+
+            for (let i = 0; i < userNames.length; i++) {
+                const userName = userNames[i];
+                const li = document.createElement('li');
+                li.innerText = userName;
+                userContainer.appendChild(li);
+            }
         }
     </script>
 </body>

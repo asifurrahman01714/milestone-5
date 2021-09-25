@@ -16,6 +16,9 @@ function undefinedFunction(num1, num2) {
 const result = undefinedFunction(23);
 console.log(result);
 
+// 4 
+let num1 = NaN;
+console.log(num1)
 // getting null
 let num = null;
 console.log(num)

@@ -32,3 +32,11 @@ if (name == 0 || name) {
 }
 
 
+// True value 
+// number beside 0, string without empty string, empty array and array, empty object and object
+let stArray =[];
+if (stArray) {
+    console.log('true value')
+} else {
+    console.log('false value')
+}

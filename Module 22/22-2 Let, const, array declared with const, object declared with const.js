@@ -20,3 +20,15 @@ const student ={
 student.Id = 13;
 console.log(student)
 // student = student.Id;-- Not possible
+
+// Var vs Let. Let is a scope variable. It will not leak it's value outer space in scope.
+
+for (var i = 0; i < 10; i++) {
+  console.log(i) ;
+}
+console.log(i)
+
+for (let j = 0; j < 10; j++) {
+    console.log(j) ;
+  }
+//console.log(j) - j is not defined

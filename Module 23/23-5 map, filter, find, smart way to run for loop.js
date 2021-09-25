@@ -20,3 +20,6 @@ console.log(secondResult);
 //  })
 const bigger = numbers.filter(element => element >10)
  console.log(bigger)
+
+const finder = numbers.find(element =>element > 10);
+console.log(finder);

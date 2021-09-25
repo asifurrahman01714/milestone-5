@@ -37,6 +37,10 @@ function getVowels(str) {
 
   function getVowels1(str) {
     var m = str.match(/[aeiou]/gi);
+      /*This just matches against the regex (g makes it search the whole string, 
+    i makes it case-insensitive) and returns the number of matches. 
+    We check for null incase there are no matches (ie no vowels), 
+    and return 0 in that case. */
     return m === null ? 0 : m.length;
   }
   console.log(getVowels1('asif'));

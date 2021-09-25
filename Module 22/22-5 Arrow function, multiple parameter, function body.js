@@ -25,3 +25,13 @@ console.log(addNumbers1(2,3));
 const doubleIt4 = x => 3*2;
 console.log(doubleIt4(3));
 
+// Multiline arrow function
+const addAndDifference = (x, y) =>{
+    const sum = x + y;
+    const difference = x -y;
+    const result = sum * difference;
+    return result;
+}
+
+const result = addAndDifference(5, 2);
+console.log(result);

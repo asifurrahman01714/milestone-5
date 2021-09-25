@@ -13,3 +13,11 @@ if (first1 == second1) {
 } else {
     console.log('false')
 }
+
+const first2 =1;
+const second2 =true;
+if (first2 === second2) {
+    console.log('true')
+} else {
+    console.log('false')
+}

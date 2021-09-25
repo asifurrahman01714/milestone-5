@@ -21,4 +21,22 @@ let num1 = NaN;
 console.log(num1)
 // getting null
 let num = null;
-console.log(num)
+console.log(num);
+
+function getVowels(str) {
+    const m = str.match(/[aeiou]/gi);
+    if (m === null) {
+      return 0;
+    }
+    return m.length;
+  }
+  
+  console.log(getVowels('sky'));
+  // expected output: 0
+
+
+  function getVowels1(str) {
+    var m = str.match(/[aeiou]/gi);
+    return m === null ? 0 : m.length;
+  }
+  console.log(getVowels1('asif'));

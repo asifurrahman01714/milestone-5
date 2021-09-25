@@ -11,3 +11,12 @@ studentID[1]=45
 console.log(studentID);
 // everything change is possible in a array const variable. But you can't change the overall array
 // studentID=['asif','sakib']
+
+// This is true for also object.
+const student ={
+    Id: 12,
+    name: 'Asif',
+}
+student.Id = 13;
+console.log(student)
+// student = student.Id;-- Not possible

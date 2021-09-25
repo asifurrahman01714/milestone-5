@@ -13,3 +13,10 @@ console.log(AllNames);
 
 const AllStudentNames =students.map(singleObject => singleObject.name);
 console.log(AllStudentNames);
+
+const filterAllStudentNames = students.filter(singleObject => singleObject.id > 22);
+console.log(filterAllStudentNames);
+
+const findAllStudentNames = students.find(singleObject => singleObject.id >23);
+console.log(findAllStudentNames);
+

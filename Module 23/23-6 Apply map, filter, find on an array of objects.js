@@ -10,3 +10,6 @@ for (let i = 0; i < students.length; i++) {
     AllNames.push(element);
 }
 console.log(AllNames);
+
+const AllStudentNames =students.map(singleObject => singleObject.name);
+console.log(AllStudentNames);

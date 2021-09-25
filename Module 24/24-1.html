@@ -9,33 +9,21 @@
 <body>
     <h1>JSON - Javascript Object Notation</h1>
     <h2>All person From Json</h2>
-    <ul id="userContainer">
-
-    </ul>
-    <script>
-        const user = {id: 123, name: 'Asif Ur Rahman'}
-        const userJson = JSON.stringify(user); // Converting object to json string
-        console.log(userJson);
-        const userFromJson = JSON.parse(userJson); // Converting json to object
-        console.log(userFromJson);
-    </script>
-
+    <ul id="userName"></ul> <!-- Giving an ID of UL to capture it. -->
     <script>
         fetch('https://jsonplaceholder.typicode.com/users')
         .then(response =>response.json())
-        .then(data => displayUsers(data));
+        .then(data => displayData(data));
 
-        function displayUsers(users) {
-            console.log('users', users);
-            const userContainer =document.getElementById('userContainer');
-            const userNames = users.map((user) =>user.username);
-            console.log(userNames);
-
-            for (let i = 0; i < userNames.length; i++) {
-                const userName = userNames[i];
-                const li = document.createElement('li');
-                li.innerText = userName;
-                userContainer.appendChild(li);
+        function displayData(data) {
+            const usersNames = data.map(user => user.name);
+            console.log(usersNames);
+            const userName = document.getElementById('userName'); //capturing UL
+            for (let i = 0; i < usersNames.length; i++) {
+                const username = usersNames[i];
+                const li = document.createElement('li'); // Creating Li to use in UL
+                li.innerText = username; // Inputting username in LI
+                userName.appendChild(li); // Selecting LI as UL's Child
             }
         }
     </script>

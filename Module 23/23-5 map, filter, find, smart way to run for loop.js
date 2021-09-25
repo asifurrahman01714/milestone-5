@@ -12,5 +12,11 @@ console.log(output);
 //     return element * 2;
 // })
 const secondResult =numbers.map(element => element * 2);
+console.log(secondResult);
 
-console.log(secondResult)
+
+//  const bigger = numbers.filter(function(element){
+//      return element > 8;
+//  })
+const bigger = numbers.filter(element => element >10)
+ console.log(bigger)

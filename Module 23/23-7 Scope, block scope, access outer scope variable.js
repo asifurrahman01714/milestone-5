@@ -20,3 +20,10 @@ function add(params) {
 }
 console.log(sakib);
 add();
+
+// Block scop in let and const 
+function blockScope(params) {
+    let block = 10;
+}
+// console.log(block); -- This will give an error
+blockScope();

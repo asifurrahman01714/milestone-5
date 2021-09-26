@@ -10,3 +10,13 @@ function sum(result) {
 }
 // console.log(hoisting ); -- This will give error
 sum(10);
+
+
+// global scope for let and const 
+let sakib = 10;
+let asif = 15;
+function add(params) {
+    console.log(sakib);
+}
+console.log(sakib);
+add();

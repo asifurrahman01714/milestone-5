@@ -1,0 +1,12 @@
+// Scope variable = let and constant. Wresting is not supported for this two variable declarations
+// var is some flexible in this case. It can wrest it's declaration in one upper level.
+
+function sum(result) {
+    if (result>9) {
+        console.log(hoisting ); // This will not give error. Because var hoist it's declaration to an upper step
+        var hoisting  = result;
+        console.log(hoisting );
+    }
+}
+// console.log(hoisting ); -- This will give error
+sum(10);

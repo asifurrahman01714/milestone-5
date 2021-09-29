@@ -27,3 +27,5 @@ function blockScope(params) {
 }
 // console.log(block); -- This will give an error
 blockScope();
+
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP post method</title>
+</head>
+
+<body>
+    <h1>Post a Data to server</h1>
+    <ul id="postUl">
+
+    </ul>
+   
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+                method: 'POST',
+                body: JSON.stringify({
+                    title: 'Technical Course Writer At Programming Hero',
+                    name: 'Asif',
+                    id: 1,
+                    img: "https://scontent.fdac68-1.fna.fbcdn.net/v/t1.6435-9/121632676_1690246797817765_8488801199840127934_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeEP2pfMdDvcdyJDf_DXKztmKgQnCfoeLhoqBCcJ-h4uGhpomX8SAp139eKKao2CemEyt2Bhc4YSBETA-69KV_7E&_nc_ohc=zanqOPIK3PYAX9A4c_Z&_nc_ht=scontent.fdac68-1.fna&oh=8ff4c55b9eda796b5bc30e056bde87eb&oe=617E0629"
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })
+            .then((response) => response.json())
+            .then(data => displayUser(data));
+
+            function displayUser(data) {
+                console.log(data);
+                const postUl = document.getElementById('postUl')
+                postUl.innerHTML = `
+                    Title : ${data.title}
+                    Name : ${data.name}
+                    Id : ${data.id}
+                    <img src="${data.img}" alt="">
+                `;
+                
+                
+            }
+    </script>
+</body>
+
+</html>

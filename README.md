@@ -179,6 +179,58 @@ console.log(userFromJSON); // { id: 12, name: 'John', school: 'florida school', 
 
 ```
 
+## 24-7 Send data to the server, HTTP POST Method, GET Vs POST
+
+## What is HTTP?
+The Hypertext Transfer Protocol (HTTP) is designed to enable communications between clients and servers.
+
+HTTP works as a request-response protocol between a client and server.
+
+### Example: A client (browser) sends an HTTP request to the server; then the server returns a response to the client. The response contains status information about the request and may also contain the requested content.
+
+### HTTP Methods
+GET  
+POST  
+PUT  
+HEAD  
+DELETE  
+PATCH  
+OPTIONS  
+#### The two most common HTTP methods are: GET and POST.
+
+### The GET Method
+GET is used to request data from a specified resource.
+
+GET is one of the most common HTTP methods.
+
+Note that the query string (name/value pairs) is sent in the URL of a GET request:
+
+/test/demo_form.php?name1=value1&name2=value2
+Some other notes on GET requests:
+
+### GET requests can be cached
+GET requests remain in the browser history  
+GET requests can be bookmarked  
+GET requests should never be used when dealing with sensitive data  
+GET requests have length restrictions  
+GET requests are only used to request data (not modify)  
+### The POST Method
+POST is used to send data to a server to create/update a resource.
+
+The data sent to the server with POST is stored in the request body of the HTTP request:
+
+POST /test/demo_form.php HTTP/1.1
+Host: w3schools.com
+name1=value1&name2=value2
+POST is one of the most common HTTP methods.
+
+### Some other notes on POST requests:
+
+POST requests are never cached   
+POST requests do not remain in the browser history  
+POST requests cannot be bookmarked  
+POST requests have no restrictions on data length
+
 
 
 

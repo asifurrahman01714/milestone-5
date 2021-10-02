@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP POST TO SERVER</title>
+    <style>
+        #displayData{
+            display:none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>POST YOUR DATA</h1>
+    <div id="inputData">
+        <input type="text" placeholder="Product Name" id="productName"><br>
+        <input type="text" placeholder="Brand Name" id="brandName"><br>
+        <input type="submit" id="submit" value="Submit">
+    </div>
+   
+    <div id="displayData">
+        
+    </div>
+
+
+    <script>
+        const submit = document.getElementById("submit");
+        submit.addEventListener("click", function () {
+            console.log('submit Clicked');
+
+            const productName = document.getElementById('productName').value;
+            const brandName = document.getElementById('brandName').value;
+            console.log(productName, brandName);
+
+            const postInfo = {
+                productName: productName,
+                brandName: brandName
+            }
+            postNewData(postInfo);
+            const inputData = document.getElementById('inputData');
+            inputData.style.display = 'none';
+
+            
+
+        })
+
+        function postNewData(postInfo) {
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+                    method: 'POST',
+                    body: JSON.stringify(postInfo),
+                    headers: {
+                        'Content-type': 'application/json; charset=UTF-8',
+                    },
+                })
+                .then((response) => response.json())
+                .then((json) => displayData(json));
+        }
+
+        function displayData(data) {
+            const displayData = document.getElementById('displayData');
+            displayData.style.display = 'block';
+
+            displayData.innerText = `
+                    Displaying Data
+                    Product Name : ${data.productName}
+                    Brand Name : ${data.brandName}
+            `;
+        }
+    </script>
+</body>
+
+</html>

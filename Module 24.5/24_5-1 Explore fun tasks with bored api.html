@@ -13,10 +13,16 @@
     <button id="reload">Reload</button>
 
     <script>
-        fetch('https://www.boredapi.com/api/activity/')
+        function doSomething() {
+            fetch('https://www.boredapi.com/api/activity/')
             .then(response => response.json())
             .then(data => displayData(data))
+        }
 
+        doSomething();
+        setInterval(() => {
+            doSomething();
+        }, 10000);
         function displayData(data) {
             console.log(data)
             const activity = document.getElementById('activity')

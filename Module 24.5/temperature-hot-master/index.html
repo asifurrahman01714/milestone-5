@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Temperature Hot</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background: url(images/bg-image.jpg) no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form class="col-md-6 m-auto py-5">
+            <div class="input-group mb-3">
+                <input type="text" id="inputCityName" class="form-control"
+                    placeholder="Enter a location for Weather ...">
+                <div class="input-group-append">
+                    <button type="button" id="submitBtn" class="btn btn-danger">Search</button>
+                </div>
+            </div>
+        </form>
+        <div class="weather-status text-white text-center">
+            <img src="https://openweathermap.org/img/wn/02d@2x.png" id="weatherIcon" alt="">
+            <h1 id="cityName">Dhaka</h1>
+            <h3><span id="temperature">38.06</span>&deg;C</h3>
+            <h1 id="lead">Clouds</h1>
+        </div>
+    </div>
+
+    <script>
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.addEventListener('click', function (e) {
+            const inputCityName = document.getElementById('inputCityName').value;
+            display(inputCityName);
+        })
+
+        function display(inputCityName) {
+            console.log(inputCityName)
+            const key = 'd28d3705bf3d0301c84f7905b7e79908';
+            // const url =`api.openweathermap.org/data/2.5/weather?q=${inputCityName}&appid=${key}`;
+            const url ="https://api.openweathermap.org/data/2.5/weather?q=" + inputCityName +"&appid=" + key;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => displayData(data))
+                .catch(error => console.log(error))
+
+            function displayData(data) {
+                console.log(data);
+
+                const cityName = document.getElementById('cityName');
+                cityName.innerText = data.name;
+
+                const temperature = document.getElementById('temperature');
+                temperature.innerText = (data.main.temp - 270).toFixed(2);
+
+                const lead = document.getElementById('lead');
+                lead.innerText = data.weather[0].description;
+
+                const icon = "http://openweathermap.org/img/w/"+ data.weather[0].icon  + ".png";
+                const weatherIcon = document.getElementById('weatherIcon');
+                weatherIcon.src = icon;
+
+            }
+        }
+    </script>
+</body>
+
+</html>

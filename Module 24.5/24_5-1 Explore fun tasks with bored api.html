@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bored API</title>
+</head>
+
+<body>
+    <h1 id="activity"></h1>
+    <button id="reload">Reload</button>
+
+    <script>
+        fetch('https://www.boredapi.com/api/activity/')
+            .then(response => response.json())
+            .then(data => displayData(data))
+
+        function displayData(data) {
+            console.log(data)
+            const activity = document.getElementById('activity')
+            activity.innerText = data.activity;
+        }
+        const reload = document.getElementById('reload')
+        reload.addEventListener('click', function () {
+            location.reload();
+            return false;
+        })
+    </script>
+</body>
+
+</html>

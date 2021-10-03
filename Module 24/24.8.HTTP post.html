@@ -16,8 +16,8 @@
 <body>
     <h1>POST YOUR DATA</h1>
     <div id="inputData">
-        <input type="text" placeholder="Product Name" id="productName"><br>
-        <input type="text" placeholder="Brand Name" id="brandName"><br>
+        <input type="text" placeholder="Product Name"  id="productName"><br>
+        <input type="text" placeholder="Brand Name"  id="brandName"><br>
         <input type="submit" id="submit" value="Submit">
     </div>
    
@@ -56,7 +56,8 @@
                     },
                 })
                 .then((response) => response.json())
-                .then((json) => displayData(json));
+                .then((json) => displayData(json))
+                .catch(error => alert('Please try again later'))
         }
 
         function displayData(data) {

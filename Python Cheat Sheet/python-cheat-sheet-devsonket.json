@@ -8,23 +8,23 @@
             "title": "বেইস টাইপস (Base Types)",
             "items": [{
                     "definition": "পূর্ণ সংখ্যা",
-                    "code": "int উদাহরণ: 234, 0, -193, 0b010, 0xF3"
+                    "code": "int Example: 234, 0, -193, 0b010, 0xF3"
                 },
                 {
                     "definition": "ফ্লোটিং পয়েন্ট সংখ্যা",
-                    "code": "float উদাহরণ: 9.23, 0.0, -1.7e-6"
+                    "code": "float Example: 9.23, 0.0, -1.7e-6"
                 },
                 {
                     "definition": "বুলিয়ান",
-                    "code": "bool উদাহরণ: True, False"
+                    "code": "bool Example: True, False"
                 },
                 {
                     "definition": "স্ট্রিং অথবা অক্ষর",
-                    "code": "str উদাহরণ: 'hello', \"world\""
+                    "code": "str Example: 'hello', \"world\""
                 },
                 {
                     "definition": "বাইটস",
-                    "code": "bytes উদাহরণ: b'toto\\xfe\\775'"
+                    "code": "bytes Example: b'toto\\xfe\\775'"
                 }
             ]
         },
@@ -39,19 +39,19 @@
             "title": "কনটেইনার টাইপস (Container Types)",
             "items": [{
                     "definition": "লিস্ট",
-                    "code": "list উদাহরণ: [1, 2, 3], ['x', 22, -3, 2]"
+                    "code": "list Example: [1, 2, 3], ['x', 22, -3, 2]"
                 },
                 {
                     "definition": "ডিকশনারি",
-                    "code": "dict উদাহরণ: {'one': 1, 'two': 2}"
+                    "code": "dict Example: {'one': 1, 'two': 2}"
                 },
                 {
                     "definition": "টুপল (ইমিউটেবল বা অপরিবর্তনযোগ্য ডেটা টাইপ)",
-                    "code": "tuple উদাহরণ: (1, 2, 'x',)"
+                    "code": "tuple Example: (1, 2, 'x',)"
                 },
                 {
                     "definition": "সেট",
-                    "code": "set উদাহরণ: {1, 2, 'y'}"
+                    "code": "set Example: {1, 2, 'y'}"
                 }
             ]
         },
@@ -83,7 +83,7 @@
                 },
                 {
                     "definition": "int নাম্বারের পরিবর্তনের ক্ষেত্রে বেইস এর ব্যবহার: উদাহরন ১ ও ২ এ যথাক্রমে বেইস ১৬ এবং বেইস ১০ ব্যবহার করা হয়েছে",
-                    "code": "উদাহরণ ১:  int('3f', 16) → 63 উদাহরণ ২: int('123', 10) → 123"
+                    "code": "Example ১:  int('3f', 16) → 63 Example ২: int('123', 10) → 123"
                 },
                 {
                     "definition": "দশমিকের পরের অংশের কর্তন",
@@ -131,19 +131,19 @@
             "title": "কন্ডিশনাল সেটেটমেন্ট (Conditional Statements)",
             "items": [{
                 "definition": "শর্তাবলি অনুসারে প্রগরাম চালানোর জন্য",
-                "code": "if condition_1:task_1 \nelif condition_2:task_2 \nelse:default_task উদাহরণ: animal='cat' \nif animal=='cat': print('Meow') \n else: print('Cat not found') → Meow"
+                "code": "if condition_1:task_1 \nelif condition_2:task_2 \nelse:default_task Example: animal='cat' \nif animal=='cat': print('Meow') \n else: print('Cat not found') → Meow"
             }]
         },
         {
             "title": "পাইথন লুপ (Python Loops)",
             "items": [{
                     "definition": "একটি পরিসীমা উপর পুনরাবৃত্তি(iteration)",
-                    "code": "for var in range(begin_val,end_val,step): do_something উদাহরণ: for i in range(1,4):print(i) → 1 \n2 \n3",
+                    "code": "for var in range(begin_val,end_val,step): do_something Example: for i in range(1,4):print(i) → 1 \n2 \n3",
                     "note": "By default, step এর মান 1 থাকে এবং begin_val এর মান 0 থাকে"
                 },
                 {
                     "definition": "একটি মান পর্যন্ত পরিসিমা করা",
-                    "code": "while condition: do_something উদাহরণ: while i!=3 : print(i) \n i+=1 → 1 \n2 \n3",
+                    "code": "while condition: do_something Example: while i!=3 : print(i) \n i+=1 → 1 \n2 \n3",
                     "note": "Condition সম্পূর্ণ না করলে প্রগরাম infinite loop - এ চলে যায়"
                 }
             ]
@@ -160,27 +160,27 @@
                 },
                 {
                     "definition": "সেপারেটর দ্বারা স্ট্রিংকে সাব-স্ট্রিংয়ে বিভক্ত করা",
-                    "code": "string.split('separator')   \nউদহারণ: \nstring = 'Hello, World!'   \nstring.split(',') → ['Hello', ' World!']"
+                    "code": "string.split('separator')   \nExample: \nstring = 'Hello, World!'   \nstring.split(',') → ['Hello', ' World!']"
                 },
                 {
                     "definition": "স্ট্রিং এর সাথে নাম্বার সংযুক্ত করা",
-                    "code": "string.format(number)  \nউদহারণ: \nstring = 'I am {} years old'   \nstring.format(21) → 'I am 21 years old'"
+                    "code": "string.format(number)  \nExample: \nstring = 'I am {} years old'   \nstring.format(21) → 'I am 21 years old'"
                 },
                 {
                     "definition": "একটি স্ট্রিং, একটি নির্দিষ্ট সাব-স্ট্রিং দ্বারা শেষে হয়েছে কিনা বের করা",
-                    "code": "string.endswith(substring)  \nউদহারণ: \nstring ='End with'   \nstring.endswith('th') → True"
+                    "code": "string.endswith(substring)  \nExample: \nstring ='End with'   \nstring.endswith('th') → True"
                 },
                 {
                     "definition": "স্ট্রিংটি কেবল অক্ষর দ্বারা গঠিত কিনা দেখা",
-                    "code": "string.isalpha()  \nউদহারণ: \nstring ='string'   \nstring.isalpha() → True"
+                    "code": "string.isalpha()  \nExample: \nstring ='string'   \nstring.isalpha() → True"
                 },
                 {
                     "definition": "স্ট্রিংটি কেবল সংখ্যা দ্বারা গঠিত কিনা দেখা",
-                    "code": "string.isdigit()  \nউদহারণ: \nstring ='123'   \nstring.isdigit() → True"
+                    "code": "string.isdigit()  \nExample: \nstring ='123'   \nstring.isdigit() → True"
                 },
                 {
                     "definition": "স্ট্রিংটি আইডেন্টিফায়ার (কেবল অক্ষর, সংখা ও আন্ডারস্কোর('_') বহন করবে) কিনা",
-                    "code": "string.isidentifier()  \nউদহারণ: \nstring ='It_123'   \nstring.isidentifier() → True"
+                    "code": "string.isidentifier()  \nExample: \nstring ='It_123'   \nstring.isidentifier() → True"
                 },
                 {
                     "definition": "একটি স্ট্রিংকে বড় হাতের অক্ষরে রূপান্তর করা",
@@ -240,7 +240,7 @@
                 },
                 {
                     "definition": "লিস্টের শেষে অন্য একটি লিস্টের উপাদান সংযুক্ত করা",
-                    "code": "_AList.extend(_BList)  \nউদাহরণ: \n_AList = ['itemA']   \n_BList = ['itemB']   \n_AList.extend(_BList)   \nprint(_AList) → ['itemA','itemB']"
+                    "code": "_AList.extend(_BList)  \nExample: \n_AList = ['itemA']   \n_BList = ['itemB']   \n_AList.extend(_BList)   \nprint(_AList) → ['itemA','itemB']"
                 },
                 {
                     "definition": "লিস্টে একটি উপাদান অবস্থান বের করা এবং উপাদানটি একাধিক বার থাকলে প্রথম অবস্থান বের করা",
@@ -248,23 +248,23 @@
                 },
                 {
                     "definition": "লিস্টের নির্দিষ্ট স্থানে নতুন উপাদান সংযুক্ত করা",
-                    "code": "list.insert(position,'item')  \nউদাহরণ: \n_AList = ['itemA','itemC']   \n_AList.insert(1,'itemB')   \nprint(_AList) → ['itemA','itemB','itemC']"
+                    "code": "list.insert(position,'item')  \nExample: \n_AList = ['itemA','itemC']   \n_AList.insert(1,'itemB')   \nprint(_AList) → ['itemA','itemB','itemC']"
                 },
                 {
                     "definition": "লিস্টের নির্দিষ্ট স্থানের উপাদান মুছে ফেলা",
-                    "code": "list.pop(position)  \nউদাহরণ: \n_AList = ['itemA','itemC']   \n_AList.pop(1)   \nprint(_AList) → ['itemA']"
+                    "code": "list.pop(position)  \nExample: \n_AList = ['itemA','itemC']   \n_AList.pop(1)   \nprint(_AList) → ['itemA']"
                 },
                 {
                     "definition": "লিস্টের নির্দিষ্ট উপাদান মুছে ফেলা",
-                    "code": "list.remove(item)  \nউদাহরণ: \n_AList = ['itemA','itemC']   \n_AList.remove('itemA')   \nprint(_AList) → ['itemC']"
+                    "code": "list.remove(item)  \nExample: \n_AList = ['itemA','itemC']   \n_AList.remove('itemA')   \nprint(_AList) → ['itemC']"
                 },
                 {
                     "definition": "লিস্টের উপাদান উল্টো দিক থেকে সাজানো",
-                    "code": "list.reverse()  \nউদাহরণ: \n_AList = ['itemA','itemC']   \n_AList.reverse()   \nprint(_AList) → ['itemC','itemA']"
+                    "code": "list.reverse()  \nExample: \n_AList = ['itemA','itemC']   \n_AList.reverse()   \nprint(_AList) → ['itemC','itemA']"
                 },
                 {
                     "definition": "লিস্টের উপাদান ঊর্ধ্বক্রম এবং অধঃক্রম অনুসারে সাজানো",
-                    "code": "list.sort() \nউদাহরণ: \n_AList = ['A','C']   \n_AList.sort(reverse=False)   \nprint(_AList) → ['A','C']   \n_AList.sort(reverse=True)   \nprint(_AList) → ['C','A']"
+                    "code": "list.sort() \nExample: \n_AList = ['A','C']   \n_AList.sort(reverse=False)   \nprint(_AList) → ['A','C']   \n_AList.sort(reverse=True)   \nprint(_AList) → ['C','A']"
                 }
             ]
         },
@@ -300,43 +300,43 @@
                 },
                 {
                     "definition": "একটি সেটের এমন উপাদান বাদ দেওয়া যা অন্য একটি সেটে আছে",
-                    "code": "_aSet.difference_update(_bSet)  \nউদাহরণ: \n_aSet = {'apple', 'banana'} \n_bSet = {'cherry', 'apple'}   \n_aSet.difference_update(_bSet)   \nprint(_aSet) → {'banana'}"
+                    "code": "_aSet.difference_update(_bSet)  \nExample: \n_aSet = {'apple', 'banana'} \n_bSet = {'cherry', 'apple'}   \n_aSet.difference_update(_bSet)   \nprint(_aSet) → {'banana'}"
                 },
                 {
                     "definition": "দুটি সেটের সাধারণ উপাদান ব্যতীত সকল উপাদান বের করা",
-                    "code": "_cSet = _aSet.symmetric_difference(_bSet)  \nউদাহরণ: \n_aSet = {'apple', 'banana'} \n_bSet = {'cherry', 'apple'}   \n_cSet=_aSet.symmetric_difference(_bSet)   \nprint(_cSet) → {'cherry', 'banana'}"
+                    "code": "_cSet = _aSet.symmetric_difference(_bSet)  \nExample: \n_aSet = {'apple', 'banana'} \n_bSet = {'cherry', 'apple'}   \n_cSet=_aSet.symmetric_difference(_bSet)   \nprint(_cSet) → {'cherry', 'banana'}"
                 },
                 {
                     "definition": "দুটি সেটের সাধারণ উপাদান বাদ দেওয়া এবং ঐ দুটি সেটের সাধারণ উপাদান ব্যতীত সকল উপাদান একটি সেটে সংযুক্ত করা",
-                    "code": "_aSet.symmetric_difference_update(_bSet)  \nউদাহরণ: \n_aSet = {'apple', 'banana'} \n_bSet = {'cherry', 'apple'}   \n_aSet.symmetric_difference_update(_bSet)   \nprint(_aSet) → {'cherry', 'banana'}"
+                    "code": "_aSet.symmetric_difference_update(_bSet)  \nExample: \n_aSet = {'apple', 'banana'} \n_bSet = {'cherry', 'apple'}   \n_aSet.symmetric_difference_update(_bSet)   \nprint(_aSet) → {'cherry', 'banana'}"
                 },
                 {
                     "definition": "দুটি সেটে ছেদ/সাধারণ উপাদান আছে কিনা যাচাই করা",
-                    "code": "_result = _aSet.isdisjoint(_bSet)  \nউদাহরণ: \n_aSet = {'apple', 'banana'} \n_bSet = {'cherry', 'apple'}   \n_result = _aSet.isdisjoint(_bSet)   \nprint(_result) → False"
+                    "code": "_result = _aSet.isdisjoint(_bSet)  \nExample: \n_aSet = {'apple', 'banana'} \n_bSet = {'cherry', 'apple'}   \n_result = _aSet.isdisjoint(_bSet)   \nprint(_result) → False"
                 },
                 {
                     "definition": "দুটি সেটের ছেদ/সাধারণ উপাদান বের করা",
-                    "code": "_cSet = _aSet.intersection(_bSet)  \nউদাহরণ: \n_aSet = {'apple', 'banana'} \n_bSet = {'cherry', 'apple'}   \n_cSet=_aSet.intersection(_bSet)   \nprint(_cSet) → {'apple'}"
+                    "code": "_cSet = _aSet.intersection(_bSet)  \nExample: \n_aSet = {'apple', 'banana'} \n_bSet = {'cherry', 'apple'}   \n_cSet=_aSet.intersection(_bSet)   \nprint(_cSet) → {'apple'}"
                 },
                 {
                     "definition": "একটি সেটের এমন উপাদান বাদ দেওয়া যা অন্য একটি সেটে নেই",
-                    "code": "_aSet.intersection_update(_bSet)  \nউদাহরণ: \n_aSet = {'apple', 'banana'} \n_bSet = {'cherry', 'apple'}   \n_aSet.intersection_update(_bSet)   \nprint(_aSet) → {'apple'}"
+                    "code": "_aSet.intersection_update(_bSet)  \nExample: \n_aSet = {'apple', 'banana'} \n_bSet = {'cherry', 'apple'}   \n_aSet.intersection_update(_bSet)   \nprint(_aSet) → {'apple'}"
                 },
                 {
                     "definition": "দুটি সেটের ইউনিয়ন বের করা",
-                    "code": "_cSet = _aSet.union(_bSet)  \nউদাহরণ: \n_aSet = {'apple', 'banana'} \n_bSet = {'cherry', 'apple'}   \n_cSet=_aSet.union(_bSet)   \nprint(_cSet) → {'apple', 'cherry', 'banana'}"
+                    "code": "_cSet = _aSet.union(_bSet)  \nExample: \n_aSet = {'apple', 'banana'} \n_bSet = {'cherry', 'apple'}   \n_cSet=_aSet.union(_bSet)   \nprint(_cSet) → {'apple', 'cherry', 'banana'}"
                 },
                 {
                     "definition": "একটি সেটের সব উপাদান অন্য একটি সেটে উপস্থিত কিনা যাচাই করা",
-                    "code": "_result = _aSet.issubset(_bSet)  \nউদাহরণ: \n_aSet = {'apple', 'banana'} \n_bSet = {'banana','cherry', 'apple'}   \n_result = _aSet.issubset(_bSet)   \nprint(_result) → True"
+                    "code": "_result = _aSet.issubset(_bSet)  \nExample: \n_aSet = {'apple', 'banana'} \n_bSet = {'banana','cherry', 'apple'}   \n_result = _aSet.issubset(_bSet)   \nprint(_result) → True"
                 },
                 {
                     "definition": "একটি সেটে অন্য একটি সেটের সব উপাদান উপস্থিত কিনা যাচাই করা",
-                    "code": "_result = _aSet.issuperset(_bSet)  \nউদাহরণ: \n_aSet = {'apple', 'cherry', 'banana'} \n_bSet = {'banana', 'apple'}   \n_result = _aSet.issuperset(_bSet)   \nprint(_result) → True"
+                    "code": "_result = _aSet.issuperset(_bSet)  \nExample: \n_aSet = {'apple', 'cherry', 'banana'} \n_bSet = {'banana', 'apple'}   \n_result = _aSet.issuperset(_bSet)   \nprint(_result) → True"
                 },
                 {
                     "definition": "একটি সেটে অন্য একটি সেটের সব উপাদান সংযুক্ত করা",
-                    "code": "_aSet.update(_bSet)  \nউদাহরণ: \n_aSet = {'apple', 'banana'} \n_bSet = {'cherry', 'apple'}   \n_aSet.update(_bSet)   \nprint(_aSet) → {'apple', 'banana', 'cherry'}"
+                    "code": "_aSet.update(_bSet)  \nExample: \n_aSet = {'apple', 'banana'} \n_bSet = {'cherry', 'apple'}   \n_aSet.update(_bSet)   \nprint(_aSet) → {'apple', 'banana', 'cherry'}"
                 },
                 {
                     "definition": "সেটের নির্দিষ্ট উপাদান মুছে ফেলা",
@@ -348,7 +348,7 @@
             "title": "ফাইল পরিচালনা (File Handling)",
             "items": [{
                     "definition": "ফাইল খোলা (ফাইল উপস্থিত না থাকলে এরর দেখাবে)",
-                    "code": "file = open(fileLocation, 'r') \nউদাহরণ: \nfile = open('D:\\myfiles\\myFile.txt', 'r')"
+                    "code": "file = open(fileLocation, 'r') \nExample: \nfile = open('D:\\myfiles\\myFile.txt', 'r')"
                 },
                 {
                     "definition": "সম্পূর্ণ ফাইল পড়া",
@@ -364,19 +364,19 @@
                 },
                 {
                     "definition": "নতুন ফাইল তৈরি করা",
-                    "code": "newFile = open(fileName,'x') \nউদাহরণ: \nfile = open('D:\\myfiles\\myNewFile.txt', 'x')"
+                    "code": "newFile = open(fileName,'x') \nExample: \nfile = open('D:\\myfiles\\myNewFile.txt', 'x')"
                 },
                 {
                     "definition": "পুরাতন ফাইল আপডেট করা",
-                    "code": "updateFile = open(fileName,'w') \nউদাহরণ: \nfile = open('D:\\myfiles\\myNewFile.txt', 'w')"
+                    "code": "updateFile = open(fileName,'w') \nExample: \nfile = open('D:\\myfiles\\myNewFile.txt', 'w')"
                 },
                 {
                     "definition": "ফাইল অপসারণ করা",
-                    "code": "os.remove(newFile) \nউদাহরণ: \nos.remove('D:\\myfiles\\myNewFile.txt')"
+                    "code": "os.remove(newFile) \nExample: \nos.remove('D:\\myfiles\\myNewFile.txt')"
                 },
                 {
                     "definition": "ফাইল বাইনারি বা টেক্সট মোড হিসাবে পরিচালনা করতে পারেন (b - বাইনারি, t - টেক্সট)",
-                    "code": "file = open(fileLocation, 'rb') \nউদাহরণ: \nfile = open('D:\\myfiles\\myFile.png', 'rb')\n\nবিঃদ্রঃ এখানে, পড়ার জন্য 'r', এবং বাইনারির জন্য 'b'"
+                    "code": "file = open(fileLocation, 'rb') \nExample: \nfile = open('D:\\myfiles\\myFile.png', 'rb')\n\nবিঃদ্রঃ এখানে, পড়ার জন্য 'r', এবং বাইনারির জন্য 'b'"
                 }
             ]
         },

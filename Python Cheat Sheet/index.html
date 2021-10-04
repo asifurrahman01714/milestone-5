@@ -19,10 +19,11 @@
     </div>
 
     <script>
-        const url = '/Python Cheat Sheet/python-cheat-sheet-devsonket.json';
+        const url ='/Python Cheat Sheet/python-cheat-sheet-devsonket.json';
         fetch(url)
             .then(response => response.json())
             .then(data => displayData(data.contents))
+            .catch(error =>console.log(error))
 
         function displayData(data) {
             console.log(data);
@@ -44,7 +45,7 @@
                     const card = document.createElement('div');
                     card.innerHTML = `
                    
-                        <div class="card col-md-3 mt-3" style="width: 18rem;">
+                        <div class="m-3">
                             <div class="card-header">
                                 Title : ${element.title}
                             </div>
@@ -52,9 +53,10 @@
                                 <h5 class="card-title">${definition}</h5>
                                 <p class="card-text">${code}</p>
                             </div>
-                        </div>
+                       </div>
                     
                     `;
+                    card.classList="col-md-3 card mt-3";
                     cheatSheet.appendChild(card);
                 }
             }

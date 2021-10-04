@@ -14,3 +14,4 @@ console.log(userJSON) // {"id":12,"name":"John","school":"florida school","gf":{
 
 const userFromJSON = JSON.parse(userJSON);
 console.log(userFromJSON); // { id: 12, name: 'John', school: 'florida school', gf: { name: 'ema' } }
+

@@ -90,7 +90,8 @@ console.log(heroPerson.salary);// result :4500
 
 ```
 
-
+Asif Ur Rahman   
+Technical Course Writer At Programming Hero
 
 
 

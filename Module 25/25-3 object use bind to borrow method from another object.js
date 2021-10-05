@@ -1,0 +1,1 @@
+// Bind give a function as a return

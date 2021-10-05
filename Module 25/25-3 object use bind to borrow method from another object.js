@@ -12,16 +12,18 @@ const normalPerson = {
         console.log(this.firstName + ' ' + this.lastName); // we can call any value of an object key from a built in function or method  by this keyword.
         return this.firstName + ' ' + this.lastName;
     },
-    chargeSalary: function (amount) {
+    chargeSalary: function (amount,tips,tax) {
         //console.log(this)
-        return this.salary = this.salary - amount;
+        return this.salary = this.salary - amount -tips -tax;
     }
 
 }
 
 
 // result is same for this function call
-normalPerson.chargeSalary(300);
+const chargeNormalPerson = normalPerson.chargeSalary(300,300,300);
+console.log(chargeNormalPerson);
+console.log(normalPerson.salary);
 normalPerson.getFullName();
 
 
@@ -35,6 +37,8 @@ const heroPerson ={
 // using chargeSalary method to this heroPerson
 const heroChargeSalary = normalPerson.chargeSalary.bind(heroPerson);
 // It will give a function named heroChargeSalary. So we have to call it to use.
-heroChargeSalary(300);
-console.log(heroPerson.salary)
+heroChargeSalary(300,100,100);
+console.log(heroPerson.salary);
+
+
 

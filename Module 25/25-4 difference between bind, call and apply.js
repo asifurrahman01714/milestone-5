@@ -20,3 +20,11 @@ console.log(heroPerson.salary);
 
 // no change in normalPerson
 console.log(normalChargeSalary);
+
+const friendlyPerson ={
+    name: 'Hero',
+    salary: 25000
+}
+normalPerson.chargeSalary.apply(friendlyPerson,[400,50,50]);
+console.log(friendlyPerson.salary);
+

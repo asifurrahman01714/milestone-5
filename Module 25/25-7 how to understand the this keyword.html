@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This keyword</title>
+</head>
+
+<body>
+
+    <script>
+        const myObj = {
+            name: 'Asif Ur Rahman',
+            getFullName: function (name) {
+                console.log(this);
+                return "Md. " + this.name;
+            }
+        }
+
+        const anotherObj = {
+            name: "Sakib Ur Rahman",
+        }
+        anotherObj.getFullName = myObj.getFullName; // without bind, call, apply
+
+        console.log(myObj.getFullName());
+        console.log(anotherObj.getFullName());
+
+
+        function add(n1, n2) {
+            console.log(this);
+        }
+
+        add(2, 3);
+        myObj.add = add;
+        myObj.add();
+
+        anotherObj.sum = add;
+        anotherObj.sum();
+    </script>
+</body>
+
+</html>

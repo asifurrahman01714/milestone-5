@@ -1,3 +1,5 @@
+// we use class to stay same behaviour of property in object
+// new keyword is used to make an object from a class
 class Person{
     constructor(firstName, lastName, salary){
         this.firstName = firstName;

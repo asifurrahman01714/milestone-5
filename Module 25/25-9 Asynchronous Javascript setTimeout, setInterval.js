@@ -19,3 +19,9 @@ setTimeout(function() {
 setTimeout(()=> {
     console.log("lazy for 10 second");
 },10000);
+
+setInterval(() => {
+    console.log("set Interval")
+}, 1000);
+
+// stop the iteration by pressing ctrl+c.

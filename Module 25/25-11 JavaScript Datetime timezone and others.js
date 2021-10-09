@@ -5,5 +5,6 @@ for (let i = 0; i < 1000000; i++) {
     sum++;
     // console.log(sum);
 }
+console.log(sum)
 const end = new Date();
 console.log("Time elapsed: ", end - start);

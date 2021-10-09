@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Countries</title>
+</head>
+<body>
+    <h1>All countries name</h1>
+    <ol id="countryList">
+
+    </ol>
+
+    <script>
+        function loadData() {
+            fetch('https://restcountries.com/v3.1/all')
+            .then(response => response.json())
+            .then(data => displayData(data))
+        }
+        loadData();
+        function displayData(data){
+            console.log(data);
+
+            const countriesName = data.map(country => country.name.common)
+            console.log(countriesName);
+
+            for (let i = 0; i < countriesName.length; i++) {
+                const countryName = countriesName[i];
+                const countryList = document.getElementById('countryList');
+
+                const countryLi = document.createElement('li');
+                countryLi.innerText = countryName;
+
+                countryList.appendChild(countryLi);
+            }
+        }
+    </script>
+</body>
+</html>

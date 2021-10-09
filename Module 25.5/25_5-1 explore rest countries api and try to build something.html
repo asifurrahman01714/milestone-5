@@ -21,30 +21,54 @@
         function displayData(data){
             console.log(data);
 
-            const countriesName = data.map(country => country.name.common);
-            const countriesCapital = data.map(country => country.capital?.[0])
-            console.log(countriesName);
-            console.log(countriesCapital);
+            for (let i = 0; i < data.length; i++) {
+                const countries = data[i];
+                const countryName = countries.name.common;
+                const capitalName = countries.capital?.[0];
+                // console.log(countryName, capitalName);
 
-            for (let i = 0; i < countriesName.length; i++) {
-                const countryName = countriesName[i];
                 const countryList = document.getElementById('countryList');
-
                 const countryDiv = document.createElement('div');
-                for (let j = 0; j < countriesCapital.length; j++) {
-                    const countryCapitalName = countriesCapital[j];
-                    countryDiv.innerHTML =  `
+                countryDiv.innerHTML =  `
                         <h2>Country Name: ${countryName} </h2>
-                        <h3>Capital Name: ${countryCapitalName} </h3>
-                        <button>Click For Details</button>
+                        <h3>Capital Name: ${capitalName} </h3>
+                        <button >Click For Details</button>
                                 `;
                     countryDiv.style.border = "1px solid red";
                     countryDiv.style.padding = "10px";
                     countryList.appendChild(countryDiv);
-                    
-                }
-              
+
+
+                   
+
+                
             }
+
+           
+            // const countriesName = data.map(country => country.name.common);
+            // const countriesCapital = data.map(country => country.capital?.[0])
+            // console.log(countriesName);
+            // console.log(countriesCapital);
+
+            // for (let i = 0; i < countriesName.length; i++) {
+            //     const countryName = countriesName[i];
+            //     const countryList = document.getElementById('countryList');
+
+            //     const countryDiv = document.createElement('div');
+            //     for (let j = 0; j < countriesCapital.length; j++) {
+            //         const countryCapitalName = countriesCapital[j];
+            //         countryDiv.innerHTML =  `
+            //             <h2>Country Name: ${countryName} </h2>
+            //             <h3>Capital Name: ${countryCapitalName} </h3>
+            //             <button>Click For Details</button>
+            //                     `;
+            //         countryDiv.style.border = "1px solid red";
+            //         countryDiv.style.padding = "10px";
+            //         countryList.appendChild(countryDiv);
+                    
+            //     }
+              
+            // }
         }
     </script>
 </body>

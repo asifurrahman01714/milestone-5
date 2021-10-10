@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foreach</title>
+    <style>
+       #countries {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 5px;
+        }
+        .country {
+            border: 2px solid black;
+            padding: 5px;
+            border-radius: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center; margin-bottom: 10px;">Country Data Using Foreach</h1>
+    <div id="countries">
+
+    </div>
+
+    <script>
+        function loadData() {
+            const url = `https://restcountries.com/v3.1/all`;
+            fetch(url)
+            .then(response => response.json())
+            .then(data =>displayData(data))
+        }
+        loadData();
+        function displayData(data) {
+            console.log(data);
+
+            data.forEach(country => {
+                // console.log(country);
+
+                const countryName = country.name.common;
+                const capitalName = country.capital?.[0];
+                const flag = country.flags.png;
+                console.log(countryName, capitalName,flag);
+
+                const countries = document.getElementById('countries');
+                const singleCountry = document.createElement('div');
+                singleCountry.innerHTML = `
+                    <img src="${flag}" alt="" srcset="">
+                    <h2>Country Name: ${countryName}</h2>
+                    <h4>Capital Name: ${capitalName}</h4>
+                `;
+                singleCountry.className="country";
+                countries.appendChild(singleCountry);
+            });
+        }
+    </script>
+</body>
+</html>

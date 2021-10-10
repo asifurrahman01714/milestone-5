@@ -8,6 +8,9 @@
 </head>
 <body>
     <h1>All countries name</h1>
+    <div id="countryDetails">
+
+    </div>
     <div id="countryList">
     </div>
 
@@ -32,19 +35,15 @@
                 countryDiv.innerHTML =  `
                         <h2>Country Name: ${countryName} </h2>
                         <h3>Capital Name: ${capitalName} </h3>
-                        <button >Click For Details</button>
+                        <button onClick="myFunction('${countryName}', '${capitalName}')">Click For Details</button>
                                 `;
                     countryDiv.style.border = "1px solid red";
                     countryDiv.style.padding = "10px";
                     countryList.appendChild(countryDiv);
 
-
-                   
-
-                
+              
             }
 
-           
             // const countriesName = data.map(country => country.name.common);
             // const countriesCapital = data.map(country => country.capital?.[0])
             // console.log(countriesName);
@@ -70,6 +69,42 @@
               
             // }
         }
+
+        function myFunction(countryName, capitalName) {
+                   const url = `https://restcountries.com/v3.1/name/${countryName}`;
+                   fetch(url)
+                   .then(response => response.json())
+                   .then(data => {
+                    console.log(countryName, capitalName);
+                    displayDetails(countryName,capitalName,data);
+                   })
+               }
+
+        function displayDetails(countryName,capitalName,data) {
+            console.log(data);
+
+            for (let i = 0; i < data.length; i++) {
+                const country = data[i];
+                const flag = country.flags.png;
+                console.log(flag);
+
+                const countryDetails = document.getElementById('countryDetails');
+                const countryDetailsDiv = document.createElement('div');
+                countryDetailsDiv.innerHTML =  `
+                <img src="${flag}" alt="" srcset="">
+                <h2>Country Name: ${countryName} </h2>
+                <h3>Capital Name: ${capitalName} </h3>
+                `;
+
+                countryDetailsDiv.style.border ="1px solid black";
+                countryDetailsDiv.style.padding = "10px";
+
+                countryDetails.appendChild(countryDetailsDiv);
+                
+
+            }
+        }
+
     </script>
 </body>
 </html>

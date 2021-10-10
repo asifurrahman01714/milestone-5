@@ -45,14 +45,23 @@
 
                 const countryList = document.getElementById('countryList');
                 const countryDiv = document.createElement('div');
-                countryDiv.innerHTML =  `
+                const countryInfo =  `
                         <h2>Country Name: ${countryName} </h2>
                         <h3>Capital Name: ${capitalName} </h3>
                         <button onClick="myFunction('${countryName}', '${capitalName}')">Click For Details</button>
                                 `;
-                    countryDiv.style.border = "1px solid red";
-                    countryDiv.style.padding = "10px";
-                    countryList.appendChild(countryDiv);
+                countryDiv.innerHTML = countryInfo;
+                // Or,
+                // countryDiv.innerHTML =  `
+                //         <h2>Country Name: ${countryName} </h2>
+                //         <h3>Capital Name: ${capitalName} </h3>
+                //         <button onClick="myFunction('${countryName}', '${capitalName}')">Click For Details</button>
+                //                 `;
+
+                countryList.appendChild(countryDiv);
+                countryDiv.style.border = "1px solid red";
+                countryDiv.style.padding = "10px";
+                    
 
               
             }

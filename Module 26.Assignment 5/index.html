@@ -9,15 +9,21 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Search Your Meal || Asif Ur Rahman</title>
 
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+    </style>
 </head>
 
 <body>
     <h1 class="text-center">Search Your Meal</h1>
 
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <form class="d-flex">
+                <form class="d-flex" onsubmit="return myFunction();">
                     <input class="form-control me-2" id="inputMealName"  placeholder="Search">
                     <button class="btn btn-outline-success btn-dark text-white" id="submit"
                         type="submit">Search</button>
@@ -26,8 +32,21 @@
         </div>
     </div>
 
+    <container class="mt-5">
+        <div class="row" id="mealsResult">
+            
+        </div>
+    </container>
 
     <script>
+        
+        // Removing auto reload
+        function myFunction(){
+            return false;
+        }
+        // Removing auto reload
+
+
         
         const submit = document.getElementById("submit");
         submit.addEventListener("click", () => {
@@ -45,8 +64,28 @@
 
         const displayData = (data) =>{
             const allMeals = data.meals;
+            console.log(allMeals);
             allMeals.forEach(meal => {
                 console.log(meal);
+                const mealName = meal.strMeal;
+                const thumbnail = meal.strMealThumb;
+
+                const mealsResult = document.getElementById('mealsResult');
+                const mealInfo = document.createElement('div');
+                mealInfo.innerHTML = `
+                <div>
+                    <div class="card">
+                        <img src="${thumbnail}" class="card-img-top img-thumbnail" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title">${mealName}</h5>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                
+                `;
+                mealInfo.classList="col-md-4 mt-4";
+                mealsResult.appendChild(mealInfo);
             });
         }
     </script>

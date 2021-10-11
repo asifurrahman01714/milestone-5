@@ -26,6 +26,7 @@
 <body>
     <h1 class="text-center">Search Your Meal</h1>
 
+    
     <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -39,6 +40,14 @@
     </div>
 
     <container class="mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5" id="mealDetails">
+
+            </div>
+        </div>
+    </container>
+
+    <container class="mt-5">
         <div class="row" id="mealsResult">
             
         </div>
@@ -46,12 +55,8 @@
 
     <script>
         
-       
-
-
-
         const submit = document.getElementById("submit");
-        submit.addEventListener("click", () => {
+        submit.addEventListener("click", (e) => {
             const inputMealName = document.getElementById("inputMealName").value;
             const mealsResult = document.getElementById('mealsResult');
             mealsResult.innerHTML="";
@@ -70,33 +75,74 @@
             const allMeals = data.meals;
             console.log(allMeals);
             allMeals.forEach(meal => {
-                console.log(meal);
+                // console.log(meal);
+                
                 const mealName = meal.strMeal;
-                const thumbnail = meal.strMealThumb;
+                const mealThumbnail = meal.strMealThumb;
+                const idMeal = meal.idMeal;
                 const mealInfo = document.createElement('div');
                 mealInfo.innerHTML = `
                 <div>
                     <div class="card">
-                        <img src="${thumbnail}" class="img-thumbnail" alt="...">
+                        <img src="${mealThumbnail}" class="img-thumbnail" alt="...">
                         <div class="card-body">
                         <h5 class="card-title">${mealName}</h5>
-                        <a href="#" class="btn btn-primary">See Details</a>
+                        <button id="detailBtn" onClick="detail('${idMeal}')" class="btn btn-primary">See Details</button>
                         </div>
                     </div>
                 </div>
                 
                 `;
+                
                 mealInfo.classList="col-md-4 mt-4";
                 mealsResult.appendChild(mealInfo);
+                
                 
             });
         }
 
+        
+        
+
+        function detail(idMeal) {
+            console.log(idMeal);
+            const mealsResult = document.getElementById('mealsResult');
+            mealsResult.style.display = 'none';
+
+            const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`;
+           
+            fetch(url)
+            .then(response => response.json())
+            .then(data =>displayDetails(data))
+        }
+
+        const displayDetails = (data)=>{
+           const meal = data.meals[0];
+           console.log(meal);
+
+           const mealName = meal.strMeal;
+           const mealThumbnail = meal.strMealThumb;
+           console.log(mealName, mealThumbnail);
+           const mealDetails = document.getElementById('mealDetails');
+           const mealDetailsInfo = document.createElement('div');
+           mealDetailsInfo.innerHTML =`
+           <div class="card" style="width: 100%;">
+                <img src="${mealThumbnail}" class="card-img-top img-fluid" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${mealName}</h5>
+                </div>
+            </div>
+           `;
+
+           mealDetails.appendChild(mealDetailsInfo);
+        }
          // Removing auto reload
          function myFunction(){
             return false;
         }
         // Removing auto reload
+
+        
     </script>
 </body>
 

@@ -14,6 +14,12 @@
             margin:0;
             padding: 0;
         }
+
+        .card{
+            width: 80%;
+            margin: auto;
+            align-items: center;
+        }
     </style>
 </head>
 
@@ -40,45 +46,41 @@
 
     <script>
         
-        // Removing auto reload
-        function myFunction(){
-            return false;
-        }
-        // Removing auto reload
+       
 
 
-        
+
         const submit = document.getElementById("submit");
         submit.addEventListener("click", () => {
             const inputMealName = document.getElementById("inputMealName").value;
-            loadData(inputMealName);
+            const mealsResult = document.getElementById('mealsResult');
+            mealsResult.innerHTML="";
+            loadData(inputMealName,mealsResult);
         })
 
-        const loadData = (inputMealName) => {
+        const loadData = (inputMealName,mealsResult) => {
             console.log(inputMealName);
             const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${inputMealName}`;
             fetch(url)
             .then(response => response.json())
-            .then(data =>displayData(data))
+            .then(data =>displayData(data,mealsResult))
         }
 
-        const displayData = (data) =>{
+        const displayData = (data,mealsResult) =>{
             const allMeals = data.meals;
             console.log(allMeals);
             allMeals.forEach(meal => {
                 console.log(meal);
                 const mealName = meal.strMeal;
                 const thumbnail = meal.strMealThumb;
-
-                const mealsResult = document.getElementById('mealsResult');
                 const mealInfo = document.createElement('div');
                 mealInfo.innerHTML = `
                 <div>
                     <div class="card">
-                        <img src="${thumbnail}" class="card-img-top img-thumbnail" alt="...">
+                        <img src="${thumbnail}" class="img-thumbnail" alt="...">
                         <div class="card-body">
                         <h5 class="card-title">${mealName}</h5>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="btn btn-primary">See Details</a>
                         </div>
                     </div>
                 </div>
@@ -86,8 +88,15 @@
                 `;
                 mealInfo.classList="col-md-4 mt-4";
                 mealsResult.appendChild(mealInfo);
+                
             });
         }
+
+         // Removing auto reload
+         function myFunction(){
+            return false;
+        }
+        // Removing auto reload
     </script>
 </body>
 

@@ -123,14 +123,21 @@
            const mealName = meal.strMeal;
            const mealThumbnail = meal.strMealThumb;
            console.log(mealName, mealThumbnail);
+
            const mealDetails = document.getElementById('mealDetails');
            const mealDetailsInfo = document.createElement('div');
 
-           const ingredient = [];
+           const strIngredient = [];
+
+           //why it is not working?
            for (let i = 0; i < 20; i++) {
-               const element = array[i];
-               
+            const element = `strIngredient${i}`;
+            strIngredient.push(element);
+            console.log(meal.strIngredient3);
            }
+           console.log(strIngredient);
+
+           
            mealDetailsInfo.innerHTML =`
            <div class="card" style="width: 100%;">
                 <img src="${mealThumbnail}" class="card-img-top img-fluid" alt="...">

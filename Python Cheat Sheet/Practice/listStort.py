@@ -1,5 +1,5 @@
 myList= ['A','C']
 myList.sort(reverse=False) 
-print(myList) 
+print (myList) 
 myList.sort(reverse=True) 
-print(myList) 
+print (myList) 

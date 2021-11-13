@@ -18,8 +18,7 @@ const displaySongData = (data) => {
     const lyricsName = document.getElementById('lyricsName');
     const authorName = document.getElementById('authorName');
     const searchResults = document.getElementById('searchResults');
-    for (let i = 0; i < data.length; i++) {
-        const singleSong = data[i];
+    data.forEach(singleSong => {
         const title = singleSong.title;
         const artist = singleSong.artist.name;
         console.log(title,artist);
@@ -37,7 +36,27 @@ const displaySongData = (data) => {
             </div>
         `;
         searchResults.appendChild(resultDiv);
-    }
+    });
+    // for (let i = 0; i < data.length; i++) {
+    //     const singleSong = data[i];
+    //     const title = singleSong.title;
+    //     const artist = singleSong.artist.name;
+    //     console.log(title,artist);
+        
+    //     const resultDiv = document.createElement('div');
+    //     resultDiv.innerHTML =`
+    //     <div class="single-result row align-items-center my-3 p-3">
+    //                 <div class="col-md-9" id="lyricsContainer">
+    //                     <h3 class="lyrics-name" id="lyricsName">${title}</h3>
+    //                     <p class="author lead">Album by <span id="authorName">${artist}</span></p>
+    //                 </div>
+    //                 <div class="col-md-3 text-md-right text-center">
+    //                     <button class="btn btn-success" onClick="getLyrics('${title}','${artist}')">Get Lyrics</button>
+    //                 </div>
+    //         </div>
+    //     `;
+    //     searchResults.appendChild(resultDiv);
+    // }
  }
 
  const getLyrics = (title, artist) => {

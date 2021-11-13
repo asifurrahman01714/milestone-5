@@ -29,6 +29,9 @@ const displaySongData = (data) => {
                     <div class="col-md-9" id="lyricsContainer">
                         <h3 class="lyrics-name" id="lyricsName">${title}</h3>
                         <p class="author lead">Album by <span id="authorName">${artist}</span></p>
+                        <audio controls>
+                            <source src="${singleSong.preview}" type="audio/ogg">
+                        </audio>
                     </div>
                     <div class="col-md-3 text-md-right text-center">
                         <button class="btn btn-success" onClick="getLyrics('${title}','${artist}')">Get Lyrics</button>

@@ -11,3 +11,22 @@ example: https://api.lyrics.ovh/v1/Adele/Hello
 
 ## Live site:
 https://hard-rock-music-by-asifurrahman.netlify.app/
+
+### Synchronization
+```bash
+const mySynchronizationFunction = () => {
+    const url =`https://jsonplaceholder.typicode.com/users`;
+    .fetch(url);
+    .then(response => response.json());
+    .then(data => console.log(data));
+}
+```
+### Asynchronization
+```bash
+const myAsynchronizationFunction = () => {
+    const url =`https://jsonplaceholder.typicode.com/users`;
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log(data);
+}
+```

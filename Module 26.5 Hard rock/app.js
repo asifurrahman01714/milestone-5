@@ -6,11 +6,11 @@ searchButton.addEventListener('click', function() {
     displaySong(searchValue);
 })
 
-const displaySong = (searchValue) => {
+const displaySong = async(searchValue) => {
     const url =`https://api.lyrics.ovh/suggest/${searchValue}`;
-    fetch(url)
-    .then(response => response.json())
-    .then(data => displaySongData(data.data))
+    const res = await fetch(url);
+    const data = await res.json();
+    displaySongData(data.data)
 }
 
 const displaySongData = (data) => {

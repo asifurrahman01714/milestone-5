@@ -8,9 +8,14 @@ searchButton.addEventListener('click', function() {
 
 const displaySong = async(searchValue) => {
     const url =`https://api.lyrics.ovh/suggest/${searchValue}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    displaySongData(data.data)
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        displaySongData(data.data)
+    } catch (error) {
+        console.log(error);
+    }
+        
 }
 
 const displaySongData = (data) => {
@@ -65,7 +70,7 @@ const displaySongData = (data) => {
 
  const getLyrics = (title, artist) => {
      console.log(title, artist);
-     const url=`https://api.lyrics.ovh/v5/${artist}/${title}`;
+     const url=`https://api.lyrics.ovh/v1/${artist}/${title}`;
         fetch(url)
         .then(response => response.json())
         .then(data => displayLyrics(data.lyrics))

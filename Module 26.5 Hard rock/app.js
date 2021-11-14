@@ -65,10 +65,11 @@ const displaySongData = (data) => {
 
  const getLyrics = (title, artist) => {
      console.log(title, artist);
-     const url=`https://api.lyrics.ovh/v1/${artist}/${title}`;
+     const url=`https://api.lyrics.ovh/v5/${artist}/${title}`;
         fetch(url)
         .then(response => response.json())
         .then(data => displayLyrics(data.lyrics))
+        .catch(error => console.log(error))
  }
 
  const displayLyrics = (lyrics) => {

@@ -13,7 +13,7 @@ const displaySong = async(searchValue) => {
         const data = await res.json();
         displaySongData(data.data)
     } catch (error) {
-        console.log(error);
+        errorFunction("Something went wrong!!!");
     }
         
 }
@@ -74,7 +74,7 @@ const displaySongData = (data) => {
         fetch(url)
         .then(response => response.json())
         .then(data => displayLyrics(data.lyrics))
-        .catch(error => console.log(error))
+        .catch(error => errorFunction("Something went wrong!!!"));
  }
 
  const displayLyrics = (lyrics) => {
@@ -86,4 +86,10 @@ const displaySongData = (data) => {
     //  } else {
     //      lyricsContainer.innerHTML = lyricsContent;
     //  }
+ }
+
+ const errorFunction = (err) => {
+        console.log(err);
+        const errorMessage = document.getElementById('errorMessage');
+        errorMessage.innerText = err;
  }

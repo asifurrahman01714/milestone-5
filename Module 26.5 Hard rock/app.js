@@ -67,17 +67,16 @@ const displaySongData = (data) => {
      const url=`https://api.lyrics.ovh/v1/${artist}/${title}`;
         fetch(url)
         .then(response => response.json())
-        .then(data => displayLyrics(data))
+        .then(data => displayLyrics(data.lyrics))
  }
 
- const displayLyrics = (data) => {
-     console.log(data.lyrics);
-     const lyricsContainer = document.getElementById('lyricsContainer');
-     let lyricsContent = document.getElementById('lyricsContent');
-     lyricsContent = data.lyrics;
-     if (lyricsContent === undefined) {
-         lyricsContainer.innerHTML = '<h2>No Lyrics Found</h2>'
-     } else {
-         lyricsContainer.innerHTML = lyricsContent;
-     }
+ const displayLyrics = (lyrics) => {
+     console.log(lyrics);
+     let lyricsContainer = document.getElementById('lyricsContainer');
+     lyricsContainer.innerText = lyrics;
+    //  if (lyricsContent === undefined) {
+    //      lyricsContainer.innerHTML = '<h2>No Lyrics Found</h2>'
+    //  } else {
+    //      lyricsContainer.innerHTML = lyricsContent;
+    //  }
  }

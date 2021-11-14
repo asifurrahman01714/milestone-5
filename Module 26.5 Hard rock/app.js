@@ -17,7 +17,8 @@ const displaySongData = (data) => {
     console.log(data);
     const lyricsName = document.getElementById('lyricsName');
     const authorName = document.getElementById('authorName');
-    const searchResults = document.getElementById('searchResults');
+    let searchResults = document.getElementById('searchResults');
+    searchResults.innerHTML = " ";
     data.forEach(singleSong => {
         const title = singleSong.title;
         const artist = singleSong.artist.name;

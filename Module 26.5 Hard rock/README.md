@@ -12,7 +12,7 @@ example: https://api.lyrics.ovh/v1/Adele/Hello
 ## Live site:
 https://hard-rock-music-by-asifurrahman.netlify.app/
 
-##       javascript Synchronize and Asynchronize function declaration
+## javascript Synchronize and Asynchronize function declaration with API example.
 ### Synchronization
 ```bash
 const mySynchronizationFunction = () => {

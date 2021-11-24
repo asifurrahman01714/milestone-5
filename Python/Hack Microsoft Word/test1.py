@@ -7,6 +7,7 @@ class BSWord(QMainWindow):
         self.editor = QTextEdit()
         self.editor.setFontPointSize(20)
         self.setCentralWidget(self.editor)
+        self.font_size_box = QSpinBox()
         self.showMaximized()
         self.setWindowTitle('My BS Word')
         self.create_tool_bar()
@@ -45,6 +46,10 @@ class BSWord(QMainWindow):
         tool_bar.addWidget(self.font_size_box)
 
         self.addToolBar(tool_bar)
+
+    def set_font_size(self):
+        value = self.font_size_box.value()
+        self.editor.setFontPointSize(value)
 
 app = QApplication(sys.argv)
 window = BSWord()

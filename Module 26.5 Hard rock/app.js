@@ -4,7 +4,8 @@ searchButton.addEventListener('click', function() {
     const searchInput = document.getElementById('searchInput');
     const searchValue = searchInput.value;
     console.log(searchValue);
-    spinner.style.display = 'block';
+    // spinner.style.display = 'block';
+    toggleSpinner(true);
     displaySong(searchValue);
 })
 
@@ -47,7 +48,8 @@ const displaySongData = (data) => {
             </div>
         `;
         searchResults.appendChild(resultDiv);
-        spinner.style.display = 'none';
+        // spinner.style.display = 'none';
+        toggleSpinner(false);
     });
     // for (let i = 0; i < data.length; i++) {
     //     const singleSong = data[i];
@@ -95,4 +97,13 @@ const displaySongData = (data) => {
         console.log(err);
         const errorMessage = document.getElementById('errorMessage');
         errorMessage.innerText = err;
+ }
+
+ const toggleSpinner = (show) => {
+     const spinner = document.getElementById('spinner');
+     if (show) {
+         spinner.style.display = 'block';
+     } else {
+         spinner.style.display = 'none';
+     }
  }

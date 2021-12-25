@@ -1,5 +1,14 @@
 const searchButton = document.getElementById('searchButton');
 const spinner = document.getElementById('spinner');
+var searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keypress", function(event) {
+    if (event.keyCode == 13){
+        searchButton.click();
+    }
+});
+
+
 searchButton.addEventListener('click', function() {
     const searchInput = document.getElementById('searchInput');
     const searchValue = searchInput.value;

@@ -1,8 +1,10 @@
 const searchButton = document.getElementById('searchButton');
+const spinner = document.getElementById('spinner');
 searchButton.addEventListener('click', function() {
     const searchInput = document.getElementById('searchInput');
     const searchValue = searchInput.value;
     console.log(searchValue);
+    spinner.style.display = 'block';
     displaySong(searchValue);
 })
 
@@ -45,6 +47,7 @@ const displaySongData = (data) => {
             </div>
         `;
         searchResults.appendChild(resultDiv);
+        spinner.style.display = 'none';
     });
     // for (let i = 0; i < data.length; i++) {
     //     const singleSong = data[i];
